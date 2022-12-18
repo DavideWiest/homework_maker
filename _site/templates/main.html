@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block header %}{{ title }}{% endblock %}
+
+{% block htmlcontents %}
+
+<form action="#" method="post">
+    {% csrf_token  %}
+
+    <div id="{{ signupForm.name.auto_id }}_wrapper">
+        <label id="{{ signupForm.name.auto_id }}_label" for="{{ signupForm.name.auto_id }}">{{ signupForm.name.label }}</label>
+        {{ signupForm.name }}
+        {% if signupForm.name.errors %}
+            <div id="{{ signupForm.name.auto_id }}_errors" class="text-sm text-red-600">
+                {{ signupForm.name.errors }}
+            </div>
+        {% endif %}
+    </div>
+    <div id="{{ signupForm.email.auto_id }}_wrapper">
+        <label id="{{ signupForm.email.auto_id }}_label" for="{{ signupForm.email.auto_id }}">{{ signupForm.email.label }}</label>
+        {{ signupForm.email }}
+        {% if signupForm.email.errors %}
+            <div id="{{ signupForm.email.auto_id }}_errors" class="text-sm text-red-600">
+                {{ signupForm.email.errors }}
+            </div>
+        {% endif %}
+    </div>
+    <div id="{{ signupForm.group.auto_id }}_wrapper">
+        <label id="{{ signupForm.group.auto_id }}_label" for="{{ signupForm.group.auto_id }}">{{ signupForm.group.label }}</label>
+        {{ signupForm.group }}
+        {% if signupForm.group.errors %}
+            <div id="{{ signupForm.group.auto_id }}_errors" class="text-sm text-red-600">
+                {{ signupForm.group.errors }}
+            </div>
+        {% endif %}
+    </div>
+    
+    <button type="submit" name="submit">{{ c.main.formButtonText }}</button>
+</form>
+
+
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{% static 'js/main.js' %}"></script>
+
+{% endblock %}

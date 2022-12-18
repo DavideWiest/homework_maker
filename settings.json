@@ -1,0 +1,33 @@
+{
+    "development_hostnames": [
+        "DESKTOP-9DUQODF"
+    ],
+    "production_hostnames": [
+        "raspi"
+    ],
+    "development_settings": {
+        "debug": true,
+        "allowed hosts": [],
+        "domainName": "http://127.0.0.1:8000"
+    },
+    "production_settings": {
+        "debug": false,
+        "allowed hosts": [
+            "raspi",
+            "homework",
+            "homework.davidewiest.com"
+        ],
+        "domainName": "homework.davidewiest.com"
+    },
+    "device_specific_settings": {
+        "DESKTOP-9DUQODF": {
+            "secrets_file_path": "C:/Users/DavWi/OneDrive/Desktop/storage/secrets/homework_maker/secrets.json"
+        },
+        "respi": {
+            "secrets_file_path": ""
+        }
+    },
+    "secret_key": ")(v0401p15m#+w-^vm-2olh6bo(b%yfy+9&#_75@75ay%+jce@",
+    "prevent_new_secret_key": true,
+    "data_json_relpath": "_site/static/_content/data.json"
+}
