@@ -46,9 +46,9 @@ def tasks_to_answers_pdf(request):
     params = {
         "title": request.GET.get("title", "Homework"),
         "info": request.GET.get("info", " "),
-        "tasks": {
-            request.GET.get("tasks")[i]: answers[i] for i in len(request.GET.get("tasks"))
-        }
+        "tasks": [
+            (request.GET.get("tasks")[i], answers[i]) for i in len(request.GET.get("tasks"))
+        ]
     }
     
     pdf = af.answers_to_pdf(params)
